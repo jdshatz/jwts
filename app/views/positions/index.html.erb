@@ -1,0 +1,50 @@
+<script src="<%= asset_path('grid') %>"></script>
+
+<div class = "grid">
+  <table>
+    <thead>
+      <tr>
+        <th><h2><i>The</i> Presidential <i>Grid</i></h2></th>
+        <% @issues.each do |issue| %>
+          <th>
+            <h2><%= issue.issname %></h2>
+          </th>
+        <% end %>
+      </tr>
+    </thead>
+
+
+    <% @candidates.each do |candidate| %>
+    <tbody>
+      <tr>
+        <td class="candiname">
+            <h2><%= candidate.name %></h2>
+            <h4><%= candidate.party %></h4>
+        </td>
+        <% @issues.each do |issue| %>
+          <% Position.where(candidate_id: candidate.id).where(issue_id: issue.id).each do |position| %>
+
+            <td class="positions">
+              <% if position.position == nil%>
+                <h3>?</h3>
+              <% else %>
+                <h3><em><%= link_to '✓', position_path(position) %> </em></h3>
+              <% end%>
+            </td>
+
+          <% end %>
+        <% end %>
+      
+          
+        </tr>
+        </tbody>
+    <% end %>
+      
+  </table>
+</div>
+
+  <div class = "explain">
+    <h2> Roll over each square in the grid.  If the candidate <em>has</em> revealed a position on the issue, you will see a ✓.  Click on it to learn more about the candidate's view.</h2>  
+
+    <h2>If <em>not</em>, a ? will appear.</h2>
+  </div>

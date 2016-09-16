@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @title %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'jwts', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arapey|Esteban|Neuton:200,300,400,800|Sorts+Mill+Goudy" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+    <div class="navigation">
+        <nav>
+          <ul class="mainmenu">
+            <li><a href="/"><img src="/assets/logo.png"></a></li>
+            <li><a href="/home/grid">The Grid</a></li>
+            <li><a href="/positions/new">Contribute</a></li>
+            <li><a href="/home/about">About</a></li>
+            <li><a href="/home/staff">Staff</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="yielding">
+        <%= yield %>
+      </div>
+
+      <div class="footer">
+
+        <div id="copyright">
+          <p>Copyright 2016 J.D. Shatz</p> 
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+</html>

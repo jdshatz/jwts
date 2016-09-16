@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  issname: MyString
+  candidate_id: 1
+  position_id: MyString
+  integer: MyString
+
+two:
+  issname: MyString
+  candidate_id: 1
+  position_id: MyString
+  integer: MyString
