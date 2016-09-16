@@ -21,7 +21,7 @@
             <h2><%= candidate.name %></h2>
             <h4><%= candidate.party %></h4>
         </td>
-        <% @issues.each do |issue| %>
+        <% @issues.sort.each do |issue| %>
           <% Position.where(candidate_id: candidate.id).where(issue_id: issue.id).each do |position| %>
 
             <td class="positions">
