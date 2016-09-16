@@ -5,7 +5,7 @@
     <thead>
       <tr>
         <th><h2><i>The</i> Presidential <i>Grid</i></h2></th>
-        <% @issues.each do |issue| %>
+        <% @issues.sort.each do |issue| %>
           <th>
             <h2><%= issue.issname %></h2>
           </th>
