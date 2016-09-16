@@ -1,5 +1,4 @@
-$(document).ready(function(e) {
-  e.preventDefault();
+$(document).ready(function() {
    $("td").on(
         "mouseenter", function(){
          $(this).fadeTo(500, 0.5);
