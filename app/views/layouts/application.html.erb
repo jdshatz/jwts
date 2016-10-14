@@ -8,16 +8,25 @@
     <%= javascript_include_tag 'application', 'jwts', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Arapey|Esteban|Neuton:200,300,400,800|Sorts+Mill+Goudy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700" rel="stylesheet">
 
   </head>
 
   <body>
-    <div class="wrapper">
-
+    <header>
+      <div id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </header>
     <div class="navigation">
-        <nav>
+        <a href="/"><img src="/assets/logo.png"></a>
+          <nav>
+          <ul class="menutab"> 
+            <li><a href="#">Menu</a></li> <!---Will slide down on mobile version.  Will not appear on iPad or desktop versions.-->
+          </ul>
           <ul class="mainmenu">
-            <li><a href="/"><img src="/assets/logo.png"></a></li>
             <li><a href="/home/grid">The Grid</a></li>
             <li><a href="/positions/new">Contribute</a></li>
             <li><a href="/home/about">About</a></li>
@@ -37,7 +46,6 @@
         </div>
 
       </div>
-    </div>
   </body>
 
 </html>

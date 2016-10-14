@@ -2,217 +2,287 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
+$phone-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin phone {
+  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+
+
+body {
   width: 90vw;
   background-color: rgba(191, 190, 193, 1);
   margin-left: 5vw;
   margin-right: 5vw;
-}
 
-nav{
-  width:75vw;
-  margin-left: 0vw;
-  margin-right: 0vw;
-  img{
-    width: 20vw;
-    height: 8vw; /*Laptop/desktop design. Work on media queries! */
-    border: 1vw solid white;
-    @media all and (max-width: 480px){
-      border: 1vw solid white;
-      width: 70vw;
-      height: 30vw; /*On mobile, the title will be atop the nav.*/
+  .navigation {
+    margin-left: 0vw;
+    margin-right: 0vw;
+    @media all and (min-device-width:768px) {
+      width: 75vw;
     }
-  }
-  ul{
-    li{
-      list-style: none;
-      display: inline;
-      padding: 0vw 1vw 0vw 0vw;
-      font-family: "Neuton", serif;
-      font-weight: 200;
-      @media all and (min-width: 481px) and (max-width:768px) {
-        list-style: none;
-        display: inline;
-        padding: 0vw 3vw 0vw 3vw;
-        margin-left: 2vw;
-        a{
-          font-size:2vw;
-        }
+    @media all and (max-width:768px) {
+      width: 100vw;
+    }
+
+    img {
+      @media all and (min-device-width:769px){
+        width: 20vw;
+        height: 8vw; /*Laptop/desktop design. Work on media queries! */
+        border: 1vw solid white;
       }
-
-    }
-  }
-}
-
-a{
-  text-decoration:none;
-}
-
-a:hover{
-  color:#535050;
-  opacity: 1;
-}
-
-a:visited{ 
-    text-decoration: none;
-}
-
-
-.yielding{
-    width: 80vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    background-color: #404040;
-
-  .subtitle {
-    padding-top: 2vw;
-    padding-bottom: 0.5vw;
-    color:#C5BD99;
-    text-align:center;
-    line-height: 4vw;
-    font-family:"Esteban", serif;
-    font-weight:300;
-    text-align:center;
-    line-height: 6vw;
-    h2{
-        font-size:6vw;
-    }
-  }
-
-  .heading{
-
-    h3{
-      margin-top:2vw;
-      width: 70vw;
-      margin-right: 10vw;
-      margin-left:5vw;
-      color: white;
-      font-size:2.5vw;
-      font-weight:300;
-      text-align:center;
-      line-height: 2vw;
-      font-family:'Neuton', serif;
-
-
-      a{
-        font-size: 4vw;
-        color: #C5BD99;
-        text-transform: none; 
-
-        @media all and (max-width: 480px){
-          margin-right: 15vw;
-          margin-left:15vw;
-          color: white;
-          font-size:4vw;
-          line-height: 5vw;
-        }
-      }
-    }
-
-
-    h4{
-      width: 60vw;
-      color: white;
-      margin-right: 20vw;
-      margin-left:10vw;
-      font-size:1.5vw;
-      font-weight:200;
-      text-align:center;
-      line-height: 3vw;
-      font-family: 'Neuton', serif;
-
-      @media all and (max-width: 480px){
-        width: 70vw;
-        font-size:4vw;
-        line-height: 4vw;
-      }
-    }
-
-    #red{
-      color: #ff0020;
-      font-weight: normal;
-    }
-
-    #blue{
-      color: #0074aa;
-      font-weight: normal;
-    }
-  }
-
-  .member{
-    width:80vw;
-    
-    div{
-      display: inline-block;
-      align-content: center;
-      @media all and (max-width: 480px){
-        display: block;
+      @media all and (min-device-width: 481px) and (max-device-width:768px){
+        width: 50vw;
+        height: 18vw; 
+        border: 1vw solid white;
         margin: 0 auto;
+        margin-left:17.5vw;  /* margin: 0 auto doesn't center it perfectly. */
+        margin-right:20vw;
+      }
+      @media all and (max-device-width:480px) {
+        border: 1vw solid white;
+        width: 90vw;
+        height: 30vw; /*On mobile, the title will be atop the nav.*/
+      }
+    }
+    nav {
+      ul {
+      margin-right: -5vw;
+      text-align: center;
+        li {
+          list-style:none;
+          font-family: "Neuton", serif;
+          @media all and (min-device-width: 769px) {
+            display: inline;
+            padding: 0vw 2.5vw 0vw 1.5vw;
+            a {
+              font-size: 3.5vw;
+              font-family: 'Playfair Display SC', serif;
+              font-weight: 400;
+            }
+          }
+          @media all and (min-device-width: 481px) and (max-device-width:768px) {
+            display: inline-block;
+            margin-left: 1.9vw;
+            a {
+              font-size: 4vw;
+              font-family: 'Playfair Display SC', serif;
+            }
+          }
+          @media all and (max-device-width: 480px) {
+            display: block;
+            a {
+              font-size: 8vw;
+              margin-left: -8vw;
+            }
+          }
+        }
+      }
+      .menutab{
+        @media all and (min-device-width: 481px) {
+              display: none;
+        }
+        @media all and (max-device-width: 480px) {
+              display: block;
+        }
+      }
+      .mainmenu{
+        @media all and (max-device-width: 480px) {
+              display: none;
+        }
       }
     }
   }
 
-  .staffpic{
-    width:30vw;
-    img{
-      height: 36vw;
-      width: 24vw;
-      margin-left: 4vw;
-    }
+  a {
+    text-decoration:none;
+    font-family: 'Playfair Display SC', serif;
+    color:#9909AB;
   }
 
-  .bio {
-    width:40vw;
-    h3{
-      color: white;
-      width:30vw;
-      font-size:2.5vw;
-      font-weight:2vw;
-      line-height: 2vw;
-      font-family:'Esteban', serif;
-    }
-    p{ 
-      width: 34vw;
-      margin-right: 5vw;
-      padding-bottom: -2vw;
-      color: white;
-      font-size:2vw;
-      font-weight:2vw;
-      text-align:left;
-      font-family:'EB Garamond', Georgia, serif;
-      margin-left: 0vw;
-    }
+  a:hover {
+    color:#535050;
+    opacity: 1;
   }
-  .paragraphs{
-    p{ 
-      width: 60vw;
-      margin-right: 10vw;
-      margin-left: 10vw;
-      font-size: 4vw;
-      color: white;
-      font-size:2vw;
+
+  a:visited { 
+      text-decoration: none;
+  }
+
+
+  .yielding {
+      width: 80vw;
+      margin-left: 5vw;
+      margin-right: 5vw;
+      background-color: #404040;
+
+    .subtitle {
+      padding-top: 2vw;
+      padding-bottom: 0.5vw;
+      color:#C5BD99;
+      text-align:center;
+      line-height: 4vw;
+      font-family:"Esteban", serif;
       font-weight:300;
       text-align:center;
-      font-family:'Esteban', serif;
-      padding-bottom: 2vw;
+      line-height: 6vw;
+      h2 {
+          font-size:6vw;
+      }
+    }
+
+    .heading {
+
+      h3 {
+        margin-top:2vw;
+        width: 70vw;
+        margin-right: 10vw;
+        margin-left:5vw;
+        color: white;
+        font-size:2.5vw;
+        font-weight:300;
+        text-align:center;
+        line-height: 2vw;
+        font-family:'Neuton', serif;
+
+
+        a {
+          font-size: 4vw;
+          color: #C5BD99;
+          text-transform: none; 
+
+          @media all and (max-device-width: 480px) {
+            margin-right: 15vw;
+            margin-left:15vw;
+            color: white;
+            font-size:4vw;
+            line-height: 5vw;
+          }
+        }
+      }
+
+
+      h4 {
+        width: 60vw;
+        color: white;
+        margin-right: 20vw;
+        margin-left:10vw;
+        font-size:1.5vw;
+        font-weight:200;
+        text-align:center;
+        line-height: 3vw;
+        font-family: 'Neuton', serif;
+
+        @media all and (max-device-width: 480px) {
+          width: 70vw;
+          font-size:4vw;
+          line-height: 4vw;
+        }
+      }
+
+      #red {
+        color: #ff0020;
+        font-weight: normal;
+      }
+
+      #blue {
+        color: #0074aa;
+        font-weight: normal;
+      }
+    }
+
+    .member {
+      width:80vw;
+      
+      div {
+        display: inline-block;
+        align-content: center;
+        @media all and (max-device-width: 480px) {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .staffpic {
+      width:30vw;
+      img {
+        height: 36vw;
+        width: 24vw;
+        margin-left: 4vw;
+      }
+    }
+
+    .bio {
+      width:40vw;
+      h3 {
+        color: white;
+        width:30vw;
+        font-size:2.5vw;
+        font-weight:2vw;
+        line-height: 2vw;
+        font-family:'Esteban', serif;
+      }
+      p { 
+        width: 34vw;
+        margin-right: 5vw;
+        padding-bottom: -2vw;
+        color: white;
+        font-size:2vw;
+        font-weight:2vw;
+        text-align:left;
+        font-family:'EB Garamond', Georgia, serif;
+        margin-left: 0vw;
+      }
+    }
+    .paragraphs {
+      p { 
+        width: 60vw;
+        margin-right: 10vw;
+        margin-left: 10vw;
+        font-size: 4vw;
+        color: white;
+        font-size:2vw;
+        font-weight:300;
+        text-align:center;
+        font-family:'Esteban', serif;
+        padding-bottom: 2vw;
+      }
     }
   }
-}
 
-.footer{
-  width:80vw;
-  position:relative;
-  div{
-    display:inline;
-  }
-  #copyright{
-    width:90vw;
-    p{
-      float: left;
-      font-size:1vw;
-      line-height:0.5vw;
-      color:#FFFFFF;
-      margin-top: 9vw;
+  .footer {
+    width:80vw;
+    position:relative;
+    div {
+      display:inline;
+    }
+    #copyright {
+      width:90vw;
+      p {
+        float: left;
+        font-size:1vw;
+        line-height:0.5vw;
+        color:#FFFFFF;
+        margin-top: 9vw;
+      }
     }
   }
 }
