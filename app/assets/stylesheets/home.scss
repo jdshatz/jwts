@@ -106,6 +106,8 @@ body {
       .mainmenu{
         @media all and (max-device-width: 480px) {
               display: none;
+              position:relative;
+              z-index:1;
         }
       }
     }
@@ -115,11 +117,6 @@ body {
     text-decoration:none;
     font-family: 'Playfair Display SC', serif;
     color:#9909AB;
-  }
-
-  a:hover {
-    color:#535050;
-    opacity: 1;
   }
 
   a:visited { 

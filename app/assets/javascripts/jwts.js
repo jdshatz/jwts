@@ -1,4 +1,21 @@
-
+$(document).ready(function(){
+  $('.menutab').click(function(){
+    var toggling = $('.mainmenu').css('display');
+      if (toggling = 'none'){
+        $('.mainmenu').slideToggle(1000);
+        $('.navigation').animate({bottom: "-=150px"});
+        $("body").css({'opacity':'0.4'});
+        toggling = 'block';
+    }
+    else{
+     $('.mainmenu').slideToggle(1000);
+      $(this).css({'z-index':'0', 'opacity':'1'}, 4)
+      $('.navigation').animate({bottom: "+=150px"});
+      toggling = 'none';
+      $("body").css({'z-index':'1', 'opacity':'1'})
+    }
+  })
+})
 
 
    //$("a").on('click', function(){
