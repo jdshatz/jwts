@@ -72,26 +72,20 @@ body {
           @media all and (min-device-width: 769px) {
             display: inline;
             padding: 0vw 2.5vw 0vw 1.5vw;
-            a {
-              font-size: 3.5vw;
-              font-family: 'Playfair Display SC', serif;
-              font-weight: 400;
-            }
+            font-size: 3.5vw;
+            font-family: 'Playfair Display SC', serif;
+            font-weight: 400;
           }
           @media all and (min-device-width: 481px) and (max-device-width:768px) {
             display: inline-block;
             margin-left: 1.9vw;
-            a {
-              font-size: 4vw;
-              font-family: 'Playfair Display SC', serif;
-            }
+            font-size: 4vw;
+            font-family: 'Playfair Display SC', serif;
           }
           @media all and (max-device-width: 480px) {
             display: block;
-            a {
-              font-size: 8vw;
-              margin-left: -8vw;
-            }
+            font-size: 8vw;
+            margin-left: -8vw;
           }
         }
       }
@@ -101,13 +95,16 @@ body {
         }
         @media all and (max-device-width: 480px) {
               display: block;
+              li{
+                  color:#9909AB;
+              }
         }
       }
       .mainmenu{
         @media all and (max-device-width: 480px) {
               display: none;
               position:relative;
-              z-index:1;
+              background-color: #000000;
         }
       }
     }
@@ -142,6 +139,10 @@ body {
       line-height: 6vw;
       h2 {
           font-size:6vw;
+          @media all and (max-device-width: 480px) {
+            font-size:8vw;
+            line-height: 7vw;
+          }
       }
     }
 
@@ -159,6 +160,11 @@ body {
         line-height: 2vw;
         font-family:'Neuton', serif;
 
+        @media all and (max-device-width: 480px) {
+          font-size:8vw;
+          line-height: 7vw;
+          margin-right:15vw;
+        }
 
         a {
           font-size: 4vw;
@@ -166,11 +172,12 @@ body {
           text-transform: none; 
 
           @media all and (max-device-width: 480px) {
-            margin-right: 15vw;
-            margin-left:15vw;
+            margin-right: 1vw;
+            margin-left:1vw;
             color: white;
-            font-size:4vw;
+            font-size:5vw;
             line-height: 5vw;
+            font-weight:700;
           }
         }
       }
@@ -188,9 +195,11 @@ body {
         font-family: 'Neuton', serif;
 
         @media all and (max-device-width: 480px) {
-          width: 70vw;
+          width: 60vw;
           font-size:4vw;
           line-height: 4vw;
+          margin-right: 20vw;
+          margin-left:10vw;
         }
       }
 
@@ -223,12 +232,24 @@ body {
       img {
         height: 36vw;
         width: 24vw;
-        margin-left: 4vw;
+        @media all and (min-device-width: 769px) {
+          float:left;
+          margin-left:4vw;
+        }
+        @media all and (max-device-width: 480px) {
+          height: 40vw;
+          width: 30vw;
+        }
       }
     }
 
     .bio {
       width:40vw;
+        @media all and (max-device-width: 768px) {
+        }
+        @media all and (max-device-width: 480px) {
+          width:90vw;
+        }
       h3 {
         color: white;
         width:30vw;
@@ -236,6 +257,16 @@ body {
         font-weight:2vw;
         line-height: 2vw;
         font-family:'Esteban', serif;
+        @media all and (max-device-width: 768px) {
+          font-size:1.5vw;
+          float:left;
+        }
+        @media all and (max-device-width: 480px) {
+          font-size:5vw;
+          width:90vw;
+          text-align:center;
+          margin-left: -4.5vw;
+        }
       }
       p { 
         width: 34vw;
@@ -247,9 +278,23 @@ body {
         text-align:left;
         font-family:'EB Garamond', Georgia, serif;
         margin-left: 0vw;
+        @media all and (max-device-width: 768px) {
+        }
+        @media all and (max-device-width: 480px) {
+          width:65vw;
+          margin-left:7.5vw;
+          margin-right:30vw;
+          padding-bottom: 5vw;
+          text-align:center;
+        }
       }
     }
     .paragraphs {
+      @media all and (max-device-width: 480px) {
+          height:80vw;
+          overflow-y:scroll;
+          font-size: 5vw;
+        }
       p { 
         width: 60vw;
         margin-right: 10vw;
@@ -261,6 +306,12 @@ body {
         text-align:center;
         font-family:'Esteban', serif;
         padding-bottom: 2vw;
+      @media all and (max-device-width: 768px) {
+          font-size:3vw;
+        }
+        @media all and (max-device-width: 480px) {
+          font-size: 5vw;
+        }
       }
     }
   }
@@ -279,6 +330,14 @@ body {
         line-height:0.5vw;
         color:#FFFFFF;
         margin-top: 9vw;
+        @media all and (max-device-width: 768px) {
+          font-size:1.5vw;
+          float:left;
+        }
+        @media all and (max-device-width: 480px) {
+          font-size:2.5vw;
+          float:left;
+        }
       }
     }
   }
