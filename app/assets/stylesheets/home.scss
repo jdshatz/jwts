@@ -45,7 +45,7 @@ body {
     img {
       @media all and (min-device-width:769px){
         width: 20vw;
-        height: 8vw; /*Laptop/desktop design. Work on media queries! */
+        height: 8vw; /*Laptop/desktop design. */
         border: 1vw solid white;
       }
       @media all and (min-device-width: 481px) and (max-device-width:768px){
