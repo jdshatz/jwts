@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load',function(){
   event.preventDefault();
-  $('.menutab').click(function(){
+  $('.menutab').on('click touchstart',function(){
     event.preventDefault();
     var toggling = $('.mainmenu').css('display');
       if (toggling = 'none'){
