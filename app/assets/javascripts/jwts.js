@@ -1,5 +1,4 @@
 $(document).on('turbolinks:load',function(){
-  event.preventDefault();
   $('.menutab').bind("touchstart",function(){
     event.preventDefault();
     var toggling = $('.mainmenu').css('display');

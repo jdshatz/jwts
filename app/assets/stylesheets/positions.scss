@@ -42,7 +42,7 @@
         padding: 1vw;
         text-align:center;
         @media all and (max-device-width: 480px) {
-          font-size:3vw;
+          font-size:2.5vw;
         }
       }
     }
@@ -63,7 +63,7 @@
         color: white;
         text-align:center;
         @media all and (max-device-width: 480px) {
-          font-size:10vw;
+          font-size:7vw;
         }
       }
       h2{
@@ -72,7 +72,7 @@
         color: white;
         text-align:center;
         @media all and (max-device-width: 480px) {
-          font-size:10vw;
+          font-size:9vw;
         }
       }
     }
@@ -113,6 +113,9 @@
     background-color: #404045;
     color:white;
     font-family: 'Esteban', serif;
+    @media all and (max-device-width: 480px) {
+        width:40vw;
+    }
   }
 
   .positions{
@@ -124,6 +127,9 @@
       margin-top: -1vw;
       a{
         color:white;
+      }
+      @media all and (max-device-width: 480px) {
+        width:40vw;
       }
     }
   }
